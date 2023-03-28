@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multer Example</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+  <div class="container text-center">
+    <h1>File Uploaded</h1>
+    <% if (file) { %>
+      <img src="<%= file.path %>" alt="<%= file.originalname %>">
+      <p>File name: <%= file.originalname %></p>
+      <p>File size: <%= file.size %> bytes</p>
+    <% } %>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="file" name="file">
+      <button type="submit" class="btn btn-primary">Upload File</button>
+    </form>
+  </div>
+  <!-- Include Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
